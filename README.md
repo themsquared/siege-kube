@@ -27,7 +27,7 @@ This is designed to be configured using environment variables. Very convenient f
 |CONCURRENT|10         |no         |number of concurrent siege users|
 |BENCHMARK |false      |no         |true sets  the delay to 0|
 |FOLLOW_REDIRECTS|true |no         |should requests follow redirects|
-|NOFOLLOW  |"ad.doubleclick.net"|no|redirect urls to ignore separated by `|`|
+|NOFOLLOW  |"ad.doubleclick.net"|no|redirect urls to ignore separated by pipes|
 
 ## Usage
 
