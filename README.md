@@ -6,24 +6,28 @@ This is a containerized version of the the awesome load-testing tool called [Sie
 
 This is designed to be configured using environment variables. Very convenient for running inside of Kubernetes as a job with many copies in order to distribute your load testing.
 
-|Variable  |Default|Required?|
-|----------|-------|---------|
-|URL       |n/a    |yes      |
-|VERBOSE   |true   |no       |
-|COLOR     |on     |no       |
-|PARSER    |true   |no       |
-|GMETHOD   |HEAD   |no       |
-|TIMESTAMP |true   |no       |
-|FULLURL   |true   |no       |
-|DISPLAY_ID|false  |no       |
-|LIMIT     |10     |no       |
-|CACHE     |false  |no       |
-|CONNECTION|close  |no       |
-|TIME      |5m     |no       |
-|DELAY     |0.25   |no       |
-|TIMEOUT   |5      |no       |
-|COOKIES   |false  |no       |
-|NOFOLLOW  |"ad.doubleclick.net|pagead2.googlesyndication.com|ads.pubsqrd.com|ib.adnxs.com"|no|
+|Variable  |Default|Required?|Description|
+|----------|-------|---------|-----------|
+|URL       |n/a    |yes      |the url to siege|
+|VERBOSE   |true   |no       |show output on stdou (recommended true)|
+|COLOR     |on     |no       |colorized output|
+|PARSER    |true   |no       |true downloads css,js,etc.|
+|TIMESTAMP |true   |no       |show timestamp in output|
+|FULLURL   |true   |no       |display full URL in output|
+|DISPLAY_ID|false  |no       |show siege user id in verbose mode|
+|LIMIT     |10     |no       |max number of threads|
+|CACHE     |false  |no       |respect caching|
+|CONNECTION|close  |no       |what to do with the connection when complete|
+|TIME      |5m     |no       |amount of time to run the siege|
+|DELAY     |0.25   |no       |how long between requests|
+|TIMEOUT   |5      |no       |timeout of requests|
+|COOKIES   |false  |no       |keep cookies?|
+|FAILURES  |100    |no       |number of failures before quitting|
+|USER_AGENT|SiegeDocker|no   |the user agent string of the siege|
+|CONCURRENT|10     |no       |number of concurrent siege users|
+|BENCHMARK |false  |no       |true sets  the delay to 0|
+|FOLLOW_REDIRECTS|true|no    |should requests follow redirects|
+|NOFOLLOW  |"ad.doubleclick.net|pagead2.googlesyndication.com|ads.pubsqrd.com|ib.adnxs.com"|no|redirect urls to ignore|
 
 ## Usage
 
