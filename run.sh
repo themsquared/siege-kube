@@ -30,6 +30,7 @@ if [ -z "$FAILURES" ]; then FAILURES=10; fi
 if [ -z "$BENCHMARK" ]; then BENCHMARK=false; fi
 if [ -z "$USER_AGENT" ]; then USER_AGENT='SiegeDocker/42.42'; fi
 if [ -z "$FOLLOW_REDIRECTS" ]; then FOLLOW_REDIRECTS=true; fi
+if [ -z "$CONCURRENT" ]; then CONCURRENT=10; fi
 
 # Buld the config
 echo "url = $URL" >> $CONFIG_FILE
@@ -51,6 +52,7 @@ echo "failures = $FAILURES" >> $CONFIG_FILE
 echo "benchmark = $BENCHMARK" >> $CONFIG_FILE
 echo "user-agent = $USER_AGENT" >> $CONFIG_FILE
 echo "follow-location = $FOLLOW_REDIRECTS" >> $CONFIG_FILE
+echo "concurrent = $CONCURRENT" >> $CONFIG_FILE
 
 # Non-Customizables
 echo "quiet = false" >> $CONFIG_FILE
