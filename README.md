@@ -41,6 +41,13 @@ From here, try this:
 
 There is an example `job.yaml` that shows how to run 10 of these at once.  Use that as a baseline to build your own load test.
 
+Once each job completes, you can get the summary of the run like so:
+
+```
+SIEGE_PODS=$(kubectl get po | grep siege | awk '{print $1}')
+for pod in $SIEGE_PODS; do echo $pod && kubectl logs $pod | grep Transactions -A12; done
+```
+
 ## How it Works
 
 ### run.sh
