@@ -31,10 +31,18 @@ This is designed to be configured using environment variables. Very convenient f
 
 ## Usage
 
+### Local
+
 From here, try this:
 
-`docker build -t siege . && docker run -it --rm  --env TIME=5s --env URL=google.com --env PARSER=false siege`
+`docker run -it --rm  --env TIME=5s --env URL=example.com --env PARSER=false sudermanjr/siege:4.0.4`
 
-## run.sh
+### Kubernetes
 
-This sets up the config file in /root/.siege/siege.conf and then runs siege.  By default it displays to stdout for docker logging to capture it.
+There is an example `job.yaml` that shows how to run 10 of these at once.  Use that as a baseline to build your own load test.
+
+## How it Works
+
+### run.sh
+
+This script sets up the config file in /root/.siege/siege.conf and then runs siege.  By default it displays to stdout for docker logging to capture it.
