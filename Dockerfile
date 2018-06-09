@@ -7,8 +7,8 @@ RUN apt-get update \
 RUN mkdir /siege
 WORKDIR /siege
 RUN wget http://download.joedog.org/siege/siege-4.0.4.tar.gz \
-    && tar --strip-components=1 -zxvf siege-latest.tar.gz \
-    && rm siege-latest.tar.gz
+    && tar --strip-components=1 -zxvf siege-4.0.4.tar.gz \
+    && rm siege-4.0.4.tar.gz
 
 RUN ./configure
 RUN make
