@@ -58,7 +58,7 @@ echo "show-logfile = false" >> $CONFIG_FILE
 echo "logging = false" >> $CONFIG_FILE
 echo "protocol = HTTP/1.1" >> $CONFIG_FILE
 echo "chunked = true" >> $CONFIG_FILE
-echo "accept-encoding = gzip, defalate" >> $CONFIG_FILE
+echo "accept-encoding = gzip, deflate" >> $CONFIG_FILE
 echo "url-excaping = true" >> $CONFIG_FILE
 
 # Set NOFOLLOW
