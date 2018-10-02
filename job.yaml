@@ -10,17 +10,24 @@ spec:
         image: sudermanjr/siege:4.0.4
         env:
         - name: URL
-          value: "example.com"
+          value: 
+          - "http://nginx-deployment/api/N1list"
+          - "http://nginx-deployment/api/celery/fetchable/stick"
+          - "http://nginx-deployment/api/celery/fetchable/ball"
+          - "http://nginx-deployment//api/celery/fetchable/shoe"
+          - "http://nginx-deployment/api/celery/fetchable/frisbee"
+          - "http://nginx-deployment/api/celery/fetchable/bone"
+          - "http://nginx-deployment/list"
         - name: TIMEOUT
           value: "60"
         - name: PARSER
           value: "false"
         - name: CONCURRENT
-          value: "1"
+          value: "20"
         - name: LIMIT
           value: "100"
         - name: TIME
-          value: "30s"
+          value: "8760H"
       restartPolicy: Never
   backoffLimit: 1
   parallelism: 10
