@@ -4,6 +4,7 @@
 
 CONFIG_FILE="/root/.siege/siege.conf"
 echo "# Siege Config" > $CONFIG_FILE
+URL_LIST="/root/.siege/urls.txt"
 
 # Set the customizable options
 if [ -z "$URL" ]; then
@@ -32,7 +33,11 @@ if [ -z "$FOLLOW_REDIRECTS" ]; then FOLLOW_REDIRECTS=true; fi
 if [ -z "$CONCURRENT" ]; then CONCURRENT=10; fi
 
 # Buld the config
-echo "url = $URL" >> $CONFIG_FILE
+for i in "${arrayName[@]}"
+do
+    :
+    echo "url = $URL" >> $URL_LIST
+done
 echo "verbose = $VERBOSE" >> $CONFIG_FILE
 echo "color = $COLOR" >> $CONFIG_FILE
 echo "parser = $PARSER" >> $CONFIG_FILE
@@ -75,4 +80,4 @@ echo "Done configuring siege.  It will now run....."
 echo ""
 
 # Let's run it now.
-siege
+siege -f $URL_LIST
